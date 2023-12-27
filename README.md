@@ -2,7 +2,7 @@
 
 # Содержание
 - Laravel Framework 8.83.27;
-- MySQL latest;
+- MySQL 8.0;
 - Nginx;
 - PHPMyAdmin;
 - NPM
@@ -11,9 +11,8 @@
 
 1. Скачать архивом либо клонировать репозиторий;
 2. Обновить зависимости (composer update);
-3. Запустить докер;
-4. Запустить сборку проекта (docker-compose up --build);
+3. Запустить сборку проекта (docker-compose down && docker-compose up --build);
+4. Зайти в контейнер (docker exec -it project_app bash)
 5. PROFIT! Можно пользоваться
 
-p.s. В зависимости от того, где вы работаете может потребоваться предварительно ввести: docker compose exec app bash, а затем использовать привычные artisan команды (при работе в VScode с расширением докера так)
 Готовый для работы проект упакованный в Docker Laravel + Nginx + MySQL + PHPMyAdmin. Скачал и работаешь, без долгих настроек.

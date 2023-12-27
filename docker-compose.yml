@@ -11,7 +11,7 @@ services:
     depends_on:
       - app
       - db
-    container_name: project_nginx
+    container_name: lara_nginx
 
   app:
     build:
@@ -21,7 +21,7 @@ services:
       - ./:/var/www
     depends_on:
       - db
-    container_name: project_app
+    container_name: lara_app
     environment:
       DB_CONNECTION: mysql
       DB_HOST: db
@@ -34,27 +34,25 @@ services:
     working_dir: /var/www
 
   db:
-    image: mysql:latest
-    container_name: project_db
-    restart: always
+    image: mysql:8.0
+    container_name: lara_db
     environment:
       MYSQL_DATABASE: test
       MYSQL_USER: test-user
       MYSQL_PASSWORD: root
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - "3306:3306"
+      - "3302:3306"
 
   pphpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    container_name: lara_phpmyadmin
     environment:
       - PMA_HOST=db
       - PMA_PORT=3306
       - PMA_ARBITRARY=1
-    restart: always
     ports:
-      - 8080:80
+      - 8088:80
     volumes: 
       - /sessions
     depends_on:
