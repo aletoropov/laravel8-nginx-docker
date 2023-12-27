@@ -12,7 +12,7 @@
 1. Скачать архивом либо клонировать репозиторий;
 2. Обновить зависимости (composer update);
 3. Запустить сборку проекта (docker-compose down && docker-compose up --build);
-4. Зайти в контейнер (docker exec -it project_app bash)
+4. Зайти в контейнер (docker exec -it lara_app bash)
 5. PROFIT! Можно пользоваться
 
 Готовый для работы проект упакованный в Docker Laravel + Nginx + MySQL + PHPMyAdmin. Скачал и работаешь, без долгих настроек.
